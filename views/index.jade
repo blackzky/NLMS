@@ -1,5 +1,36 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  div.navbar.navbar-inverse.navbar-fixed-top
+    div.navbar-inner
+      div.container
+        button(type="button", class="btn btn-navbar", data-toggle="collapse", data-target=".nav-collapse")
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        a.brand(href="#")
+          | Project name
+        div.nav-collapse.collapse
+          ul.nav
+            li.active
+              a(href="#")
+                | Home
+            li
+              a(href="#about")
+                | About
+            li
+              a(href="#contact")
+                | Contact
+
+  div.container
+    h1 Bootstrap starter template. Welcome to #{title}
+    p
+      Use this document as a way to&nbsp;
+      a(href="#", data-toggle="tooltip", title="first tooltip", id="example")
+        | hover over me
+      &nbsp;quick start any new project.
+
+      br
+      All you get is this message and a barebones HTML document.
+      i.icon-search
+
