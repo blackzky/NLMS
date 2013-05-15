@@ -1,8 +1,3 @@
-
-/**
- * Module dependencies.
- */
-
 var express = require('express')
   , page = require('./routes/page')
   , http = require('http')
@@ -32,17 +27,8 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', page.index);
+app.get('/login', page.login);
 
-
-/*
-var Cat = mongoose.model('Cat', { name: String });
-
-var kitty = new Cat({ name: 'Carlo' });
-kitty.save(function (err) {
-    if (err) // ...
-        console.log('meow');
-});
-*/
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
