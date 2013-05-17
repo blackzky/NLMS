@@ -33,6 +33,10 @@ app.get('/', page.index);
 app.get('/login', page.login);
 app.post('/login_process', page.login_process);
 
+app.get('/staff', page.staff);
+app.get('/inventory', page.inventory);
+app.get('/logs', page.logs);
+app.get('/about', page.about);
 
 /*//model schema for mongo
 var Staff = new Schema({

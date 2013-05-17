@@ -1,13 +1,36 @@
 doctype 5
 html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    link(href="/stylesheets/bootstrap/bootstrap.min.css", rel="stylesheet", media="screen")
-  body
-    block content
+   head
+      title= title
+      link(rel='stylesheet', href='/stylesheets/style.css')
+      meta(name="viewport", content="width=device-width, initial-scale=1.0")
+      link(href="/stylesheets/bootstrap/bootstrap.min.css", rel="stylesheet", media="screen")
+   body
+      - if(typeof(username) != undefined)
+           div.navbar.navbar-fixed-top
+             div.navbar-inner
+               div.container
+                 button(type="button", class="btn btn-navbar", data-toggle="collapse", data-target=".nav-collapse")
+                   span.icon-bar
+                   span.icon-bar
+                   span.icon-bar
+                 a.brand(href="/")
+                   | NLMS
+                 div.nav-collapse.collapse
+                   ul.nav.ncr-nav
+                     li.active.nav-home
+                       a(href="/") Home
+                     li.nav-staff
+                       a(href="/staff") Staff
+                     li.nav-inventory
+                       a(href="/inventory") Inventory
+                     li.nav-logs
+                       a(href="/logs") Logs
+                     li.nav-about
+                       a(href="/about") About
 
-    script(src="/javascripts/jquery-1.9.1.min.js ")
-    script(src="/javascripts/bootstrap/bootstrap.min.js")
-    script(src="/javascripts/script.js ")
+      block content
+
+      script(src="/javascripts/jquery-1.9.1.min.js ")
+      script(src="/javascripts/bootstrap/bootstrap.min.js")
+      script(src="/javascripts/script.js ")
