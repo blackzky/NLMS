@@ -24,6 +24,9 @@ block content
 
   div.container
     h1 Welcome to #{title}
+    h3
+      - if(username)
+        | Hello #{username}
     p
       Use this document as a way to&nbsp;
       a(href="#", data-toggle="tooltip", title="first tooltip", id="example")

@@ -11,7 +11,8 @@ block content
             .alert.alert-error#login-error
               a.close(data-dismiss='alert', href='#') x
               span
-                | Incorrect Username or Password!
+                - if(typeof(error) != undefined)
+                  Error #{error}
             input.input-block-level(placeholder='Username', type='text', name='username')
             input.input-block-level(placeholder='Password', type='password', name='password')
             label.checkbox
