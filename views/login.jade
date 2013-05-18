@@ -8,7 +8,7 @@ block content
             .well
                legend Sign in to NLMS
                form(method='POST', action='/login_process', accept-charset='UTF-8')
-                  .alert.alert-error#login-error
+                  .alert.alert-error#login-error.test
                      a.close(data-dismiss='alert', href='#') x
                      span
                         | #{error}
