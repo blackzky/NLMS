@@ -29,6 +29,25 @@ html
                      li.nav-about
                        a(href="/about") About
 
+                 - if(username != null)
+                   ul.nav.pull-right
+                     li.dropdown
+                       a.dropdown-toggle(href='#', data-toggle='dropdown')
+                         i.icon-user
+                         |&nbsp;#{username}&nbsp;
+                         b.caret
+                       ul.dropdown-menu
+                         li
+                           a(href='#')
+                             i.icon-cog
+                             |&nbsp;Account
+                         li.divider
+                         li
+                           a(href='/logout')
+                             i.icon-off
+                             |&nbsp;Logout
+
+
       block content
 
       script(src="/javascripts/jquery-1.9.1.min.js ")

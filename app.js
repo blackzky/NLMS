@@ -31,6 +31,7 @@ if ('development' == app.get('env')) {
 
 app.get('/', page.index);
 app.get('/login', page.login);
+app.get('/logout', page.logout);
 app.post('/login_process', page.login_process);
 
 app.get('/staff', page.staff);

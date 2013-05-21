@@ -12,12 +12,22 @@ exports.login = function(req, res){
    if(req.session.username) res.redirect("/");
    data = {
       title: 'NCR Laboratory Management System | Login',
+      username: req.session.username,
       authrequired: req.flash("authRequired")[0],
       error: req.flash('loginFailed')[0] == true ? "Incorrect username or password!" : ""
    };
 
    res.render('login', data);
 };
+
+exports.logout = function(req, res){
+   if(req.session.username){
+      req.session.username = null;
+      res.redirect("/login");
+   }else{
+      res.redirect("/");
+   }
+}
 
 
 /* todo: check if user is in the database, if so, then save the username session and redirect to homepage. */
